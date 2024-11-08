@@ -1,6 +1,7 @@
+<mat-card appearance="outlined" style="width: 80% !important; margin: auto;margin-top: 20px;">
+    <mat-card-content>
 
-
-  <div>
+<div>
     <h1>My Cart Shop</h1>
  <span>Cantidad de productos : {{cartService.cartQuantity()}}</span>
     @if (cart().length === 0) {
@@ -25,7 +26,7 @@
             <th>{{cartItem.product.name}}</th>
             <td>{{cartItem.quantity}}</td>
             <td>{{cartItem.product.price}}</td>
-            <td> <img [src]="cartItem.product.imageUrl" class="d-block mx-auto img-fluid" alt="Bootstrap Themes" width="50" loading="lazy">
+            <td> <img [src]="cartItem.product.imageUrl"  alt="Product" width="50" loading="lazy">
             </td>
             <td><i (click)="removeItem(cartItem.product.id)" class="bi bi-trash3"></i></td>
           </tr>
@@ -38,3 +39,8 @@
       </div>
     }
   </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  
