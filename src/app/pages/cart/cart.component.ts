@@ -5,11 +5,12 @@ import { CartItem } from '../../interfaces/cart-item';
 import { CurrencyPipe } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [MatListModule, CurrencyPipe,MatButtonModule,MatCardModule],
+  imports: [MatListModule, CurrencyPipe,MatButtonModule,MatCardModule,RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
