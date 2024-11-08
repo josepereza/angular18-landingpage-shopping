@@ -2,7 +2,7 @@
     <span>My Shopping</span>
     <span class="example-spacer"></span>
 
-    <a [routerLink]="['/cart']" routerLinkActive="router-link-active" >
+    <a [routerLink]="['/cart']" routerLinkActive="router-link-active" [matBadge]="cartService.cartQuantity()" matBadgeOverlap="false" >
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">shopping_cart</mat-icon>
 
 
