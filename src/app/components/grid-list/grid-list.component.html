@@ -1,0 +1,23 @@
+<section class="products-section mat-elevation-z0">
+  <div class="section-header">
+    <h2 class="mat-display-1">Nuestros Productos</h2>
+
+    <mat-chip-listbox (change)="filterProducts($event)">
+      <mat-chip-option selected value="all"> Todos </mat-chip-option>
+      <mat-chip-option selected value="Premium"> Premium </mat-chip-option>
+      <mat-chip-option selected value="Standard"> Estándar </mat-chip-option>
+    </mat-chip-listbox>
+  </div>
+
+  <mat-grid-list [cols]="cols$ | async" rowHeight="1:1.5" gutterSize="16" >
+    @for (product of filteredProducts; track product.id) {
+    <mat-grid-tile>
+      <app-card
+        [product]="product"
+        (addToCart)="cartService.addProductToCart(product,1)"
+      >
+      </app-card>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
+</section>

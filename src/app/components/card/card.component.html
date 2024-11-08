@@ -1,0 +1,40 @@
+<mat-card class="product-card mat-elevation-z4">
+    <img mat-card-image [src]="product.imageUrl" width="100%" [alt]="product.name">
+    
+    <mat-card-content>
+      <mat-chip-set>
+        <mat-chip [ngStyle]="{'background-color': '#8fd0ec'}" selected>{{product.category}}</mat-chip>
+        @if (product.inStock) {
+          <mat-chip [ngStyle]="{'background-color': 'green'}"selected>En Stock</mat-chip>
+        }@else {
+          <mat-chip [ngStyle]="{'background-color': 'orange'}"selected>no Stock</mat-chip>
+
+        }
+      </mat-chip-set>
+      
+      <h4 >{{product.name}}</h4>
+      <p>{{product.description}}</p>
+      
+      <div class="rating">
+        @for (star of [1,2,3,4,5]; track star) {
+          <mat-icon [class.filled]="star <= product.rating">
+            star
+          </mat-icon>
+        }
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end">
+      <span class="price">${{product.price}}</span>
+      <button 
+        mat-raised-button 
+        [ngStyle]="{'background-color': '#8fd0ec'}"
+        (click)="addToCart.emit(product)">
+        <mat-icon [ngStyle]="{'color': 'red'}" >add_shopping_cart</mat-icon>
+        Añadir
+      </button>
+    </mat-card-actions>
+    
+
+
+  </mat-card>

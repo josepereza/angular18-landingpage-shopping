@@ -1,0 +1,25 @@
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+mat-card-content {
+  flex-grow: 1;
+}
+
+.rating {
+  margin: 1rem 0;
+}
+
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.mat-icon {
+  color: #bdbdbd;
+}  
+ .filled {
+    color: #ffd700;
+  }
