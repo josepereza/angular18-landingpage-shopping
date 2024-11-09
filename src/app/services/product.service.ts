@@ -65,6 +65,10 @@ export class ProductService {
       this.productsSignal().filter(p => p.category === category)
     );
   }
+  getProductById(id:number){
+    console.log('product.service',id)
+return this.productsSignal().find(p=>p.id==id)
+  }
 
   addToCart(product: Product) {
     this.snackBar.open(

@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import { CardComponent } from '../card/card.component';
 import { Product } from '../../interfaces/product';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-grid-list',
   standalone: true,
@@ -23,6 +24,10 @@ export default class GridListComponent {
   private breakpointObserver = inject(BreakpointObserver);
   filteredProducts: Product[] = [];
   products: Product[] = [];
+
+  constructor(
+    //private route: ActivatedRoute,
+    private router: Router  ) {}
 
   cols$ = this.breakpointObserver
     .observe([
@@ -55,5 +60,13 @@ export default class GridListComponent {
     this.filteredProducts = $event.value === 'all' 
       ? this.products 
       : this.products.filter(p => p.category === $event.value);
+  }
+
+  gotoDetails(id:number) {
+    console.log('gotodetails')
+    //const heroId = hero ? hero.id : null;
+    // Pass along the hero id if available
+    // so that the HeroList component can select that item.
+    this.router.navigate(['/details',  id ]);
   }
 }

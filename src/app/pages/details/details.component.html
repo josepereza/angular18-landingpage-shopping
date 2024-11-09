@@ -1,1 +1,25 @@
-<p>details works!</p>
+<h2>detalles</h2>
+<br /><br />
+{{ miProducto.name }}
+
+<div class="container">
+  <mat-card appearance="outlined">
+    <mat-card-content><img [src]="miProducto.imageUrl" width="100%" alt=""></mat-card-content>
+  </mat-card>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+        <h3>{{miProducto.name}}</h3>
+        <br>
+        <p>{{miProducto.description}}</p>
+        <p>{{miProducto.features}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<a  mat-raised-button  [routerLink]="['/products']" routerLinkActive="router-link-active" >Products</a>
+
+<button  mat-raised-button  (click)="cartService.addProductToCart(miProducto,1)" >
+    <mat-icon >add_shopping_cart</mat-icon>
+    Añadir
+</button>
+

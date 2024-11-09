@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { Product } from '../../interfaces/product';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -13,7 +14,8 @@ import { Product } from '../../interfaces/product';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    RouterLink
   ],
     templateUrl: './card.component.html',
   styleUrl: './card.component.css'
@@ -21,4 +23,6 @@ import { Product } from '../../interfaces/product';
 export class CardComponent {
   @Input({ required: true }) product!: Product;
   @Output() addToCart = new EventEmitter<Product>();
+
+  
 }

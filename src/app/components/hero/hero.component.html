@@ -3,9 +3,8 @@
       <h1 class="mat-display-2">{{title}}</h1>
       <h2 class="mat-h2">{{subtitle}}</h2>
       <div class="hero-actions">
-        <button mat-raised-button color="primary" class="hero-button">
-          Ver Productos
-        </button>
+        <a mat-raised-button [routerLink]="['/products']" routerLinkActive="router-link-active" >Ver Products</a>
+        
         <button mat-stroked-button color="accent" class="hero-button">
           Saber Más
         </button>
