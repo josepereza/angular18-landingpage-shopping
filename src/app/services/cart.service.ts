@@ -49,6 +49,10 @@ export class CartService {
    
  } 
 
+ cartTotal = computed(() => {
+  return this.cart().reduce((acc, cart) => acc + cart.product.price! * cart.quantity, 0);
+});
+
  cartQuantity = computed(() => {
   return this.cart().reduce((acc, cartItem: CartItem) => acc + cartItem.quantity, 0);
 }); 
